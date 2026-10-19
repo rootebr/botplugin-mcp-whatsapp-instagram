@@ -1,0 +1,15 @@
+name: Sugestão
+description: Uma ferramenta, bloco ou IA que você quer ver no BotPlugin MCP.
+labels: ["sugestão"]
+body:
+  - type: textarea
+    id: ideia
+    attributes:
+      label: O que você gostaria de pedir para a sua IA e hoje não dá?
+      placeholder: Ex.: Quero que a IA configure a agenda do meu canal.
+    validations:
+      required: true
+  - type: textarea
+    id: porque
+    attributes:
+      label: Para que isso ajudaria no seu negócio?

@@ -1,0 +1,121 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="440" viewBox="0 0 1280 440" role="img" aria-label="BotPlugin MCP: sua IA monta e cuida do seu bot">
+  <defs>
+    <linearGradient id="fundo" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#062016"/>
+      <stop offset="1" stop-color="#03130b"/>
+    </linearGradient>
+    <radialGradient id="aurora" cx="0.18" cy="0.05" r="0.75">
+      <stop offset="0" stop-color="#0CAF60" stop-opacity="0.45"/>
+      <stop offset="1" stop-color="#0CAF60" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="aurora2" cx="0.92" cy="1" r="0.6">
+      <stop offset="0" stop-color="#3be3ff" stop-opacity="0.18"/>
+      <stop offset="1" stop-color="#3be3ff" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="logo" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#1fc472"/>
+      <stop offset="1" stop-color="#088d50"/>
+    </linearGradient>
+    <linearGradient id="destaque" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#d7ff5a"/>
+      <stop offset="0.55" stop-color="#2bf58a"/>
+      <stop offset="1" stop-color="#3be3ff"/>
+    </linearGradient>
+    <linearGradient id="feixe" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#2bf58a" stop-opacity="0.1"/>
+      <stop offset="0.5" stop-color="#2bf58a"/>
+      <stop offset="1" stop-color="#2bf58a" stop-opacity="0.1"/>
+    </linearGradient>
+    <radialGradient id="orbe" cx="0.35" cy="0.3" r="0.8">
+      <stop offset="0" stop-color="#e9fff4"/>
+      <stop offset="0.35" stop-color="#2bf58a"/>
+      <stop offset="1" stop-color="#088d50"/>
+    </radialGradient>
+    <radialGradient id="halo" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#2bf58a" stop-opacity="0.55"/>
+      <stop offset="1" stop-color="#2bf58a" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="pontos" width="22" height="22" patternUnits="userSpaceOnUse">
+      <circle cx="1.5" cy="1.5" r="1.2" fill="#ffffff" fill-opacity="0.07"/>
+    </pattern>
+    <clipPath id="canto"><rect width="1280" height="440" rx="28"/></clipPath>
+  </defs>
+
+  <g clip-path="url(#canto)">
+    <rect width="1280" height="440" fill="url(#fundo)"/>
+    <rect width="1280" height="440" fill="url(#aurora)"/>
+    <rect width="1280" height="440" fill="url(#aurora2)"/>
+    <rect width="1280" height="440" fill="url(#pontos)"/>
+
+    <!-- piso em perspectiva -->
+    <g stroke="#2bf58a" stroke-opacity="0.12" stroke-width="1.2" fill="none">
+      <path d="M0 360 H1280 M0 392 H1280 M0 430 H1280"/>
+      <path d="M640 330 L80 440 M640 330 L320 440 M640 330 L560 440 M640 330 L720 440 M640 330 L960 440 M640 330 L1200 440"/>
+    </g>
+
+    <!-- marca -->
+    <g transform="translate(64 56)">
+      <rect width="48" height="48" rx="12" fill="url(#logo)"/>
+      <path transform="translate(0 0) scale(0.48)" d="M33 27 H68 Q74 27 74 33 V57 Q74 63 68 63 H43 L32 74 V63 Q27 63 27 57 V33 Q27 27 33 27 Z" fill="none" stroke="#ffffff" stroke-width="8" stroke-linejoin="round"/>
+      <text x="62" y="33" font-family="Inter, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="25" font-weight="700" fill="#f2fff8">BotPlugin</text>
+      <rect x="190" y="9" width="78" height="30" rx="15" fill="#2bf58a"/>
+      <circle cx="207" cy="24" r="4" fill="#03130b" fill-opacity="0.6"/>
+      <text x="218" y="30" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="16" font-weight="700" fill="#03130b">MCP</text>
+    </g>
+
+    <!-- título -->
+    <g font-family="Inter, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif">
+      <rect x="64" y="152" width="40" height="3" rx="1.5" fill="#2bf58a"/>
+      <text x="116" y="160" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="16" font-weight="600" fill="#2bf58a" letter-spacing="1">SERVIDOR MCP OFICIAL</text>
+      <text x="64" y="218" font-size="54" font-weight="800" fill="#f2fff8" letter-spacing="-1.6">Sua IA monta</text>
+      <text x="64" y="278" font-size="54" font-weight="800" fill="url(#destaque)" letter-spacing="-1.6">o seu bot.</text>
+      <text x="64" y="324" font-size="19" fill="#b9d6c8">Claude, ChatGPT, Gemini, Cursor e outras IAs criando fluxos,</text>
+      <text x="64" y="350" font-size="19" fill="#b9d6c8">automações e gatilhos do seu canal no BotPlugin, só conversando.</text>
+    </g>
+
+    <!-- cena: pedido → orbe → fluxo -->
+    <g font-family="Inter, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif">
+      <!-- pedido -->
+      <g transform="translate(700 70)">
+        <rect width="516" height="64" rx="18" fill="#0c1712" fill-opacity="0.85" stroke="#2bf58a" stroke-opacity="0.35"/>
+        <rect x="12" y="12" width="40" height="40" rx="11" fill="#d7ff5a" fill-opacity="0.15" stroke="#d7ff5a" stroke-opacity="0.5"/>
+        <path transform="translate(20 20) scale(1)" d="M9.94 15.5A2 2 0 0 0 8.5 14.06l-6.13-1.58a.5.5 0 0 1 0-.96L8.5 9.94A2 2 0 0 0 9.94 8.5l1.58-6.13a.5.5 0 0 1 .96 0L14.06 8.5A2 2 0 0 0 15.5 9.94l6.13 1.58a.5.5 0 0 1 0 .96L15.5 14.06a2 2 0 0 0-1.44 1.44l-1.58 6.13a.5.5 0 0 1-.96 0z" fill="none" stroke="#d7ff5a" stroke-width="1.8" stroke-linejoin="round"/>
+        <text x="66" y="26" font-family="'JetBrains Mono', Menlo, Consolas, monospace" font-size="12" font-weight="600" fill="#d7ff5a" letter-spacing="1">VOCÊ → IA</text>
+        <text x="66" y="47" font-size="16" font-weight="500" fill="#f2fff8">Cria um bot que mostra o cardápio e anota pedidos</text>
+      </g>
+
+      <!-- feixe até o orbe -->
+      <path d="M958 134 C958 160 958 160 958 176" stroke="url(#feixe)" stroke-width="3" fill="none" stroke-dasharray="2 7" stroke-linecap="round"/>
+
+      <!-- orbe -->
+      <circle cx="958" cy="208" r="58" fill="url(#halo)"/>
+      <ellipse cx="958" cy="208" rx="44" ry="13" fill="none" stroke="#3be3ff" stroke-opacity="0.55" stroke-width="1.5" transform="rotate(-14 958 208)"/>
+      <circle cx="958" cy="208" r="26" fill="url(#orbe)"/>
+
+      <!-- feixes até os blocos -->
+      <g stroke="#2bf58a" stroke-width="2.5" fill="none" stroke-dasharray="3 7" stroke-linecap="round" stroke-opacity="0.8">
+        <path d="M934 220 C870 246 810 256 798 286"/>
+        <path d="M966 234 C990 252 1004 262 1008 286"/>
+        <path d="M984 218 C1080 240 1150 254 1168 286"/>
+      </g>
+
+      <!-- blocos -->
+      <g transform="translate(700 288)">
+        <rect width="196" height="70" rx="16" fill="#0f2a1e" stroke="#2bf58a" stroke-opacity="0.45"/>
+        <rect x="0" y="0" width="4" height="70" rx="2" fill="#2bf58a"/>
+        <text x="20" y="31" font-size="16" font-weight="700" fill="#f2fff8">Mensagem</text>
+        <text x="20" y="53" font-size="13" fill="#9fc2b1">Olá! Bem-vindo</text>
+      </g>
+      <g transform="translate(910 288)">
+        <rect width="196" height="70" rx="16" fill="#0f2a1e" stroke="#3be3ff" stroke-opacity="0.45"/>
+        <rect x="0" y="0" width="4" height="70" rx="2" fill="#3be3ff"/>
+        <text x="20" y="31" font-size="16" font-weight="700" fill="#f2fff8">Menu</text>
+        <text x="20" y="53" font-size="13" fill="#9fc2b1">1 Cardápio · 2 Pedido</text>
+      </g>
+      <g transform="translate(1120 288)">
+        <rect width="96" height="70" rx="16" fill="#2bf58a"/>
+        <path transform="translate(36 23)" d="M20 6 9 17l-5-5" fill="none" stroke="#03130b" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+      </g>
+    </g>
+  </g>
+</svg>

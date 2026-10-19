@@ -1,0 +1,4 @@
+# Em ~/.codex/config.toml. Antes, no terminal: export BOTPLUGIN_TOKEN="SUA_CHAVE"
+[mcp_servers.botplugin]
+url = "https://api.botplugin.com.br/mcp"
+bearer_token_env_var = "BOTPLUGIN_TOKEN"

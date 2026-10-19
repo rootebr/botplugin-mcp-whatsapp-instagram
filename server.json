@@ -1,0 +1,41 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "br.com.botplugin/mcp",
+  "title": "BotPlugin",
+  "description": "Build and manage WhatsApp, Instagram and website chatbots on BotPlugin by chatting with your AI.",
+  "version": "0.1.0",
+  "websiteUrl": "https://botplugin.com.br",
+  "repository": {
+    "url": "https://github.com/rootebr/botplugin-mcp-whatsapp-instagram",
+    "source": "github"
+  },
+  "icons": [
+    {
+      "src": "https://raw.githubusercontent.com/rootebr/botplugin-mcp-whatsapp-instagram/main/assets/icone.svg",
+      "mimeType": "image/svg+xml",
+      "sizes": ["any"]
+    }
+  ],
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://api.botplugin.com.br/mcp",
+      "headers": [
+        {
+          "name": "Authorization",
+          "description": "Chave de acesso do canal, gerada no painel em Configurações do canal › Conectar IA.",
+          "value": "Bearer {chave}",
+          "isRequired": true,
+          "isSecret": true,
+          "variables": {
+            "chave": {
+              "description": "Chave de acesso que começa com bpmcp_",
+              "isRequired": true,
+              "isSecret": true
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

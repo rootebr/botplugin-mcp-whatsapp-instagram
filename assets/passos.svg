@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="330" viewBox="0 0 1280 330" role="img" aria-label="Como conectar em 3 passos: gere a chave no painel, cole a configuração na sua IA e peça o que quiser">
+  <defs>
+    <linearGradient id="topo" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#effaf4"/>
+      <stop offset="1" stop-color="#ffffff"/>
+    </linearGradient>
+  </defs>
+  <g font-family="Inter, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif">
+
+    <!-- Passo 1 -->
+    <g transform="translate(1 1)">
+      <rect width="408" height="326" rx="24" fill="url(#topo)" stroke="#e3ebe7" stroke-width="1.5"/>
+      <circle cx="44" cy="46" r="18" fill="#0CAF60"/>
+      <text x="44" y="52" text-anchor="middle" font-size="16" font-weight="800" fill="#ffffff">1</text>
+      <text x="74" y="43" font-size="19" font-weight="800" fill="#0f1f17">Gere a chave</text>
+      <text x="74" y="64" font-size="13.5" fill="#5b6b63">Configurações do canal › Conectar IA</text>
+
+      <rect x="26" y="100" width="356" height="132" rx="18" fill="#0c1712"/>
+      <circle cx="48" cy="126" r="4.5" fill="#2bf58a"/>
+      <text x="60" y="131" font-size="13" font-weight="600" fill="#b9d6c8">Claude no notebook</text>
+      <text x="362" y="131" text-anchor="end" font-size="12" fill="#8fb3a2">só este canal</text>
+      <text x="44" y="170" font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="17" fill="#2bf58a">bpmcp_8f3a••••••••</text>
+      <rect x="44" y="188" width="104" height="30" rx="9" fill="#2bf58a"/>
+      <text x="96" y="208" text-anchor="middle" font-size="13" font-weight="700" fill="#062016">Copiar</text>
+
+      <text x="26" y="276" font-size="14" fill="#3d4e46">Uma chave por lugar onde você usa IA.</text>
+      <text x="26" y="298" font-size="14" fill="#3d4e46">Revogue quando quiser.</text>
+    </g>
+
+    <!-- Passo 2 -->
+    <g transform="translate(436 1)">
+      <rect width="408" height="326" rx="24" fill="url(#topo)" stroke="#e3ebe7" stroke-width="1.5"/>
+      <circle cx="44" cy="46" r="18" fill="#0CAF60"/>
+      <text x="44" y="52" text-anchor="middle" font-size="16" font-weight="800" fill="#ffffff">2</text>
+      <text x="74" y="43" font-size="19" font-weight="800" fill="#0f1f17">Cole na sua IA</text>
+      <text x="74" y="64" font-size="13.5" fill="#5b6b63">O painel já entrega pronto para copiar</text>
+
+      <rect x="26" y="100" width="356" height="132" rx="18" fill="#0c1712"/>
+      <text x="44" y="124" font-family="'JetBrains Mono', Menlo, Consolas, monospace" font-size="12" fill="#8fb3a2">terminal</text>
+      <line x1="26" y1="136" x2="382" y2="136" stroke="#1d3229"/>
+      <g font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="13.5" xml:space="preserve">
+        <text x="44" y="162" fill="#2bf58a">$ <tspan fill="#d6f5e4">claude mcp add \</tspan></text>
+        <text x="62" y="184" fill="#d6f5e4">--transport http botplugin \</text>
+        <text x="62" y="206" fill="#d6f5e4">https://api.botplugin.com.br/mcp</text>
+      </g>
+
+      <text x="26" y="276" font-size="14" fill="#3d4e46">Claude, ChatGPT (Codex), Gemini, Grok,</text>
+      <text x="26" y="298" font-size="14" fill="#3d4e46">Cursor, VS Code e Windsurf.</text>
+    </g>
+
+    <!-- Passo 3 -->
+    <g transform="translate(871 1)">
+      <rect width="408" height="326" rx="24" fill="url(#topo)" stroke="#e3ebe7" stroke-width="1.5"/>
+      <circle cx="44" cy="46" r="18" fill="#0CAF60"/>
+      <text x="44" y="52" text-anchor="middle" font-size="16" font-weight="800" fill="#ffffff">3</text>
+      <text x="74" y="43" font-size="19" font-weight="800" fill="#0f1f17">É só pedir</text>
+      <text x="74" y="64" font-size="13.5" fill="#5b6b63">A IA chama as ferramentas por você</text>
+
+      <rect x="26" y="100" width="356" height="58" rx="16" fill="#f8fbf9" stroke="#e3ebe7"/>
+      <rect x="40" y="115" width="28" height="28" rx="8" fill="#dcf5e8"/>
+      <path transform="translate(46 121) scale(0.67)" d="M9.94 15.5A2 2 0 0 0 8.5 14.06l-6.13-1.58a.5.5 0 0 1 0-.96L8.5 9.94A2 2 0 0 0 9.94 8.5l1.58-6.13a.5.5 0 0 1 .96 0L14.06 8.5A2 2 0 0 0 15.5 9.94l6.13 1.58a.5.5 0 0 1 0 .96L15.5 14.06a2 2 0 0 0-1.44 1.44l-1.58 6.13a.5.5 0 0 1-.96 0z" fill="none" stroke="#088d50" stroke-width="2.4" stroke-linejoin="round"/>
+      <text x="80" y="134" font-size="14" fill="#24352d">Monta um atendimento com menu</text>
+      <text x="80" y="151" font-size="14" fill="#24352d">e pergunta o nome do cliente</text>
+
+      <g font-family="'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace" font-size="13">
+        <rect x="26" y="172" width="356" height="28" rx="9" fill="#ffffff" stroke="#e3ebe7"/>
+        <text x="40" y="191" fill="#088d50">›</text>
+        <text x="54" y="191" fill="#0f1f17">montar_fluxo</text>
+        <text x="368" y="191" text-anchor="end" fill="#088d50">✓ 5 blocos</text>
+        <rect x="26" y="206" width="356" height="28" rx="9" fill="#ffffff" stroke="#e3ebe7"/>
+        <text x="40" y="225" fill="#088d50">›</text>
+        <text x="54" y="225" fill="#0f1f17">definir_gatilho_entrada</text>
+        <text x="368" y="225" text-anchor="end" fill="#088d50">✓ ativo</text>
+      </g>
+
+      <text x="26" y="276" font-size="14" fill="#3d4e46">Toda mudança vira uma versão que</text>
+      <text x="26" y="298" font-size="14" fill="#3d4e46">dá para restaurar.</text>
+    </g>
+  </g>
+</svg>

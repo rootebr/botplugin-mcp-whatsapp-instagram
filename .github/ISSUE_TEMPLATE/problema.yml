@@ -1,0 +1,55 @@
+name: Problema
+description: Algo não funcionou ao usar o BotPlugin MCP.
+labels: ["problema"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Obrigado por avisar! **Nunca cole a sua chave `bpmcp_...` aqui.** Se colou sem querer, revogue no painel.
+  - type: dropdown
+    id: cliente
+    attributes:
+      label: Qual IA você está usando?
+      options:
+        - Claude Code
+        - Claude Desktop
+        - claude.ai
+        - Codex
+        - API da OpenAI
+        - Gemini CLI
+        - API da xAI (Grok)
+        - Cursor
+        - VS Code
+        - Windsurf
+        - Outra
+    validations:
+      required: true
+  - type: dropdown
+    id: canal
+    attributes:
+      label: Tipo do canal
+      options:
+        - WhatsApp
+        - WhatsApp Oficial
+        - Instagram
+        - Site
+        - Facebook
+        - Outro
+  - type: textarea
+    id: pedido
+    attributes:
+      label: O que você pediu para a IA
+      placeholder: Ex.: Monta um menu com três opções...
+    validations:
+      required: true
+  - type: textarea
+    id: aconteceu
+    attributes:
+      label: O que aconteceu
+      description: A resposta ou o erro que apareceu. Pode colar o nome da ferramenta que falhou.
+    validations:
+      required: true
+  - type: textarea
+    id: esperado
+    attributes:
+      label: O que você esperava

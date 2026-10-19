@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "botplugin": {
+      "serverUrl": "https://api.botplugin.com.br/mcp",
+      "headers": { "Authorization": "Bearer SUA_CHAVE" }
+    }
+  }
+}

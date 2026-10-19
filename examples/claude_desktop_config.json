@@ -1,0 +1,15 @@
+{
+  "mcpServers": {
+    "botplugin": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "mcp-remote",
+        "https://api.botplugin.com.br/mcp",
+        "--header",
+        "Authorization:${BOTPLUGIN_AUTH}"
+      ],
+      "env": { "BOTPLUGIN_AUTH": "Bearer SUA_CHAVE" }
+    }
+  }
+}
