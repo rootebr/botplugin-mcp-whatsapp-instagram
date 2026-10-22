@@ -100,6 +100,26 @@ Quem chegar pelos anúncios de click-to-WhatsApp deve cair na automação de
 vendas, não na de boas-vindas.
 ```
 
+## Vários canais
+
+Com a [chave de todos os canais](../README.md#tipos-de-chave):
+
+```text
+Lista os meus canais e o que dispara as automações de cada um.
+```
+
+```text
+Copia o menu de boas-vindas da Loja Centro para a Loja Norte e a Loja Sul.
+```
+
+```text
+Desativa as automações com "teste" no nome em todos os canais.
+```
+
+```text
+Em quais canais o bot está fora do ar agora?
+```
+
 ## Acompanhar
 
 ```text

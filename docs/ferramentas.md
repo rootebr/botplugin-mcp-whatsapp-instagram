@@ -2,11 +2,16 @@
 
 <h1 align="center">Ferramentas do BotPlugin MCP</h1>
 
-<p align="center">As 24 ferramentas que a sua IA pode usar, com os parâmetros de cada uma.<br><a href="../README.md">Voltar para o início</a></p>
+<p align="center">As 24 ferramentas que a sua IA pode usar (mais a <code>listar_canais</code> na chave de todos os canais), com os parâmetros de cada uma.<br><a href="../README.md">Voltar para o início</a></p>
 
 ---
 
-Todas as ferramentas trabalham no **canal da chave** usada na conexão; nenhuma recebe o canal como parâmetro. Ids de automação, palavra-chave, webhook e anúncio vêm das ferramentas de listagem.
+O canal depende do tipo de chave usado na conexão:
+
+- **Chave de canal:** todas as ferramentas trabalham no canal da chave, e nenhuma recebe o canal como parâmetro. É o que as tabelas abaixo mostram.
+- **Chave de todos os canais:** toda ferramenta recebe também o parâmetro obrigatório `canal`, com o id de um dos canais que a chave alcança (veja [`listar_canais`](#listar_canais-leitura)). Um canal fora da chave é recusado, e cada resposta termina com "Canal: nome (id)".
+
+Ids de automação, palavra-chave, webhook e anúncio vêm das ferramentas de listagem.
 
 <sup>leitura</sup> marca as ferramentas que só consultam.
 
@@ -17,8 +22,13 @@ Todas as ferramentas trabalham no **canal da chave** usada na conexão; nenhuma 
 
 ## Canal
 
+### `listar_canais` <sup>leitura</sup>
+Só na chave de todos os canais. Lista os canais que a chave alcança, com id, nome, tipo (WhatsApp, Instagram, Site...), onde o bot roda e o seu papel no canal. O id é o que vai no parâmetro `canal` das outras ferramentas.
+
+Sem parâmetros.
+
 ### `ver_canal` <sup>leitura</sup>
-Mostra o canal ligado à chave: nome, tipo (WhatsApp, Instagram, Site...), onde o bot roda e se o servidor da Cloud está online.
+Mostra o canal: nome, tipo (WhatsApp, Instagram, Site...), onde o bot roda e se o servidor da Cloud está online.
 
 Sem parâmetros.
 

@@ -7,7 +7,7 @@
 <p align="center">
   <a href="#como-conectar"><img src="https://img.shields.io/badge/MCP-Streamable_HTTP-0CAF60?style=flat-square&labelColor=062016" alt="MCP Streamable HTTP"></a>
   <a href="docs/ferramentas.md"><img src="https://img.shields.io/badge/ferramentas-24-0CAF60?style=flat-square&labelColor=062016" alt="24 ferramentas"></a>
-  <a href="#segurança"><img src="https://img.shields.io/badge/acesso-1_chave_por_canal-0CAF60?style=flat-square&labelColor=062016" alt="Uma chave por canal"></a>
+  <a href="#tipos-de-chave"><img src="https://img.shields.io/badge/acesso-por_canal_ou_todos_os_canais-0CAF60?style=flat-square&labelColor=062016" alt="Chave por canal ou para todos os canais"></a>
   <a href="README.en.md"><img src="https://img.shields.io/badge/docs-PT--BR_%7C_EN-0CAF60?style=flat-square&labelColor=062016" alt="Documentação em português e inglês"></a>
 </p>
 
@@ -22,7 +22,7 @@
 
 <br>
 
-O **BotPlugin MCP** liga a sua IA favorita ao seu canal no [BotPlugin](https://botplugin.com.br). Em vez de arrastar blocos no editor, você **pede** e a IA faz: monta o fluxo de atendimento, cria automações, configura palavras-chave, gatilhos e webhooks, e ainda consulta os atendimentos do dia.
+O **BotPlugin MCP** liga a sua IA favorita aos seus canais no [BotPlugin](https://botplugin.com.br). Em vez de arrastar blocos no editor, você **pede** e a IA faz: monta o fluxo de atendimento, cria automações, configura palavras-chave, gatilhos e webhooks, e ainda consulta os atendimentos do dia.
 
 Funciona com qualquer cliente compatível com o [Model Context Protocol](https://modelcontextprotocol.io). Não tem nada para instalar: o servidor roda na nuvem do BotPlugin e você só cola o endereço e a sua chave.
 
@@ -69,7 +69,11 @@ Funciona com qualquer cliente compatível com o [Model Context Protocol](https:/
   <img src="assets/passos.svg" alt="Três passos: gere a chave, cole na sua IA e peça o que quiser" width="100%">
 </p>
 
-1. **Gere a chave.** No [painel do BotPlugin](https://app.botplugin.com.br), abra o canal, vá em **Configurações do canal › Conectar IA** e clique em **Gerar chave**. Copie na hora: ela só aparece uma vez.
+1. **Gere a chave.** No [painel do BotPlugin](https://app.botplugin.com.br), escolha onde:
+   - **Um canal:** abra o canal e vá em **Configurações do canal › Conectar IA**.
+   - **Vários canais:** clique no seu nome, no rodapé da barra lateral (no celular, menu ☰ › seu nome), e escolha **Conectar IA (todos os canais)**.
+
+   Clique em **Gerar chave** e copie na hora: ela só aparece uma vez.
 2. **Cole na sua IA.** Escolha a sua IA logo abaixo, na mesma tela do painel. Os exemplos já saem com a sua chave preenchida. Se preferir, use os guias abaixo.
 3. **Peça.** Abra a conversa e diga o que quer. Veja [exemplos de pedidos](docs/exemplos.md).
 
@@ -80,8 +84,18 @@ Você vai precisar de dois dados:
 | **Endereço do servidor** | `https://api.botplugin.com.br/mcp` |
 | **Cabeçalho** | `Authorization: Bearer SUA_CHAVE` |
 
-> [!NOTE]
-> A chave é **de um canal só**. Quem cuida de vários canais gera uma chave em cada um e conecta cada uma com um nome diferente (por exemplo `botplugin-pizzaria` e `botplugin-loja`).
+### Tipos de chave
+
+| | Chave de canal | Chave de todos os canais |
+|---|---|---|
+| **Onde gerar** | Configurações do canal › Conectar IA | Seu nome › Conectar IA (todos os canais) |
+| **Alcance** | Um canal | Todos os seus canais, inclusive os que você ganhar acesso depois, ou só os que você escolher |
+| **Validade** | Até você revogar | 30 dias, 90 dias ou 1 ano |
+| **Como a IA escolhe o canal** | Não escolhe: é sempre o da chave | Pergunta com `listar_canais` e diz o canal a cada pedido |
+| **Bom para** | Dar acesso a um canal só, por exemplo para quem cuida de um cliente | Quem cuida de vários canais e quer pedir mudanças em vários de uma vez |
+
+> [!TIP]
+> Com a chave de canal, quem cuida de vários canais conecta uma chave de cada um com um nome diferente (por exemplo `botplugin-pizzaria` e `botplugin-loja`). Com a chave de todos os canais, basta uma conexão, `botplugin`.
 
 ---
 
@@ -309,7 +323,9 @@ Acrescente em `~/.codeium/windsurf/mcp_config.json` e clique em atualizar em **M
 
 ## Ferramentas
 
-São 24 ferramentas. A IA escolhe sozinha qual usar a cada pedido; você não precisa decorar nenhuma. Os parâmetros de cada uma estão em [docs/ferramentas.md](docs/ferramentas.md).
+São 24 ferramentas, mais a `listar_canais` na chave de todos os canais. A IA escolhe sozinha qual usar a cada pedido; você não precisa decorar nenhuma. Os parâmetros de cada uma estão em [docs/ferramentas.md](docs/ferramentas.md).
+
+Com a chave de todos os canais, toda ferramenta recebe também o parâmetro `canal`, e cada resposta termina dizendo em qual canal a IA mexeu.
 
 <table>
   <tr>
@@ -319,6 +335,7 @@ São 24 ferramentas. A IA escolhe sozinha qual usar a cada pedido; você não pr
   <tr>
     <td valign="top">
 
+`listar_canais`&nbsp;<sup>leitura</sup>&nbsp;<sup>todos os canais</sup><br>
 `ver_canal`&nbsp;<sup>leitura</sup><br>
 `servidor_cloud`
 
@@ -375,7 +392,7 @@ São 24 ferramentas. A IA escolhe sozinha qual usar a cada pedido; você não pr
   </tr>
 </table>
 
-<sub><sup>leitura</sup> a ferramenta só consulta e não muda nada no canal.</sub>
+<sub><sup>leitura</sup> a ferramenta só consulta e não muda nada no canal. <sup>todos os canais</sup> só existe na chave de todos os canais.</sub>
 
 ### Blocos que a IA sabe usar
 
@@ -409,18 +426,29 @@ Quantos atendimentos tive hoje e em qual bloco cada contato parou?
 Desfaz a última mudança no fluxo de boas-vindas.
 ```
 
+Com a chave de todos os canais:
+
+```text
+Copia o menu de boas-vindas da Loja Centro para a Loja Norte.
+```
+
+```text
+Desativa as automações de teste em todos os canais.
+```
+
 Mais ideias, separadas por tipo de negócio, em [docs/exemplos.md](docs/exemplos.md).
 
 ---
 
 ## Segurança
 
-- **Uma chave por canal.** A IA só enxerga e mexe no canal da chave usada. Nenhuma ferramenta recebe outro canal.
+- **A chave só abre o que você liberou.** A chave de canal alcança um canal só. A de todos os canais alcança os canais escolhidos na criação e sempre tem validade.
+- **Acesso conferido a cada pedido.** Antes de qualquer leitura ou alteração, o BotPlugin confere se você ainda tem acesso ao canal. Se você sair de um canal ou for removido dele, a IA perde o acesso na hora, com qualquer tipo de chave.
 - **Nada de segredo exposto.** Senhas, tokens e chaves guardados nos blocos e nas variáveis voltam como `[oculto]` para a IA. Editar um bloco com `[oculto]` mantém o valor original.
 - **Só o resumo da chave fica guardado.** O BotPlugin guarda só o hash; a chave em si aparece uma única vez, na hora de gerar.
 - **Revogue quando quiser.** No mesmo lugar do painel, cada chave mostra quem criou, quando e o último uso.
 - **Tudo tem volta.** Cada gravação do fluxo vira uma versão (as 10 últimas ficam guardadas), e a IA não grava um fluxo com erro novo.
-- **Limites de uso:** 120 chamadas por minuto por chave e bloqueio temporário depois de 20 falhas por minuto vindas do mesmo IP.
+- **Limites de uso:** 120 chamadas por minuto por chave e bloqueio temporário de quem erra a chave muitas vezes seguidas.
 
 Achou uma vulnerabilidade? Veja [SECURITY.md](SECURITY.md).
 
@@ -432,6 +460,12 @@ Achou uma vulnerabilidade? Veja [SECURITY.md](SECURITY.md).
 <summary><b>A IA pode apagar o meu bot?</b></summary>
 <br>
 A IA só faz o que você pede, e muitos clientes MCP pedem a sua confirmação antes de cada ação. Mesmo assim, toda gravação do fluxo vira uma versão que dá para restaurar, e montar um fluxo por cima de um existente exige um pedido explícito para substituir.
+</details>
+
+<details>
+<summary><b>Cuido de vários canais. Preciso de uma chave para cada?</b></summary>
+<br>
+Não. Gere uma chave de todos os canais em <b>seu nome › Conectar IA (todos os canais)</b>. Você escolhe se ela vale para todos os canais, inclusive os novos, ou só para alguns, e por quanto tempo. A IA pergunta quais canais você tem e diz em qual mexeu a cada resposta.
 </details>
 
 <details>

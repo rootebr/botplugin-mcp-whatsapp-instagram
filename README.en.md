@@ -7,7 +7,7 @@
 <p align="center">
   <a href="#connect"><img src="https://img.shields.io/badge/MCP-Streamable_HTTP-0CAF60?style=flat-square&labelColor=062016" alt="MCP Streamable HTTP"></a>
   <a href="docs/ferramentas.md"><img src="https://img.shields.io/badge/tools-24-0CAF60?style=flat-square&labelColor=062016" alt="24 tools"></a>
-  <a href="#security"><img src="https://img.shields.io/badge/access-1_key_per_channel-0CAF60?style=flat-square&labelColor=062016" alt="One key per channel"></a>
+  <a href="#key-types"><img src="https://img.shields.io/badge/access-per_channel_or_all_channels-0CAF60?style=flat-square&labelColor=062016" alt="Per-channel or all-channels key"></a>
   <a href="README.md"><img src="https://img.shields.io/badge/docs-PT--BR_%7C_EN-0CAF60?style=flat-square&labelColor=062016" alt="Docs in Portuguese and English"></a>
 </p>
 
@@ -22,7 +22,7 @@
 
 <br>
 
-**BotPlugin MCP** connects your favorite AI to your [BotPlugin](https://botplugin.com.br) channel. Instead of dragging blocks around the editor, you **ask** and the AI does it: it builds the conversation flow, creates automations, sets up keywords, triggers and webhooks, and checks today's conversations.
+**BotPlugin MCP** connects your favorite AI to your [BotPlugin](https://botplugin.com.br) channels. Instead of dragging blocks around the editor, you **ask** and the AI does it: it builds the conversation flow, creates automations, sets up keywords, triggers and webhooks, and checks today's conversations.
 
 It works with any [Model Context Protocol](https://modelcontextprotocol.io) client. There is nothing to install: the server runs on BotPlugin's cloud, and you only paste the address and your key.
 
@@ -72,7 +72,11 @@ It works with any [Model Context Protocol](https://modelcontextprotocol.io) clie
   <img src="assets/passos.svg" alt="Three steps: generate the key, paste it into your AI and ask for anything" width="100%">
 </p>
 
-1. **Generate a key.** In the [BotPlugin dashboard](https://app.botplugin.com.br), open the channel, go to **Configurações do canal › Conectar IA** and click **Gerar chave**. Copy it right away: it is shown only once.
+1. **Generate a key.** In the [BotPlugin dashboard](https://app.botplugin.com.br), pick where:
+   - **One channel:** open the channel and go to **Configurações do canal › Conectar IA**.
+   - **Several channels:** click your name at the bottom of the sidebar (on mobile, menu ☰ › your name) and choose **Conectar IA (todos os canais)**.
+
+   Click **Gerar chave** and copy it right away: it is shown only once.
 2. **Paste it into your AI.** Pick your AI on the same screen; the snippets come with your key already filled in. Or use the guides below.
 3. **Ask.** Open a chat and say what you need. See [prompt examples](docs/exemplos.md) (in Portuguese).
 
@@ -81,8 +85,18 @@ It works with any [Model Context Protocol](https://modelcontextprotocol.io) clie
 | **Server URL** | `https://api.botplugin.com.br/mcp` |
 | **Header** | `Authorization: Bearer YOUR_KEY` |
 
-> [!NOTE]
-> A key belongs to **one channel**. If you manage several channels, generate one key per channel and register each with a different name (e.g. `botplugin-pizzeria` and `botplugin-store`).
+### Key types
+
+| | Channel key | All-channels key |
+|---|---|---|
+| **Where to generate** | Configurações do canal › Conectar IA | Your name › Conectar IA (todos os canais) |
+| **Reach** | One channel | All your channels, including ones you get access to later, or only the ones you pick |
+| **Expiration** | Until you revoke it | 30 days, 90 days or 1 year |
+| **How the AI picks the channel** | It doesn't: always the key's channel | Asks with `listar_canais` and names the channel on every call |
+| **Best for** | Giving access to a single channel, e.g. to whoever handles one client | Managing several channels and changing many at once |
+
+> [!TIP]
+> With channel keys, if you manage several channels you register one key per channel with different names (e.g. `botplugin-pizzeria` and `botplugin-store`). With an all-channels key, a single `botplugin` connection is enough.
 
 ---
 
@@ -292,11 +306,13 @@ curl https://api.x.ai/v1/responses \
 
 ## Tools
 
-24 tools. The AI picks the right one for each request. Full parameter reference (in Portuguese): [docs/ferramentas.md](docs/ferramentas.md).
+24 tools, plus `listar_canais` on all-channels keys. The AI picks the right one for each request. Full parameter reference (in Portuguese): [docs/ferramentas.md](docs/ferramentas.md).
+
+With an all-channels key every tool also takes a `canal` (channel) parameter, and each response ends by naming the channel the AI changed.
 
 | Group | Tools |
 |---|---|
-| **Channel** | `ver_canal`<sup>read</sup> · `servidor_cloud` |
+| **Channel** | `listar_canais`<sup>read · all-channels key</sup> · `ver_canal`<sup>read</sup> · `servidor_cloud` |
 | **Automations** | `listar_automacoes`<sup>read</sup> · `ver_automacao`<sup>read</sup> · `criar_automacao` · `atualizar_automacao` · `ativar_desativar_automacao` |
 | **Triggers** | `listar_ativacoes`<sup>read</sup> · `definir_gatilho_entrada` · `remover_gatilho_entrada` · `salvar_palavra_chave` · `remover_palavra_chave` · `criar_webhook` · `atualizar_webhook` · `remover_webhook` · `definir_automacao_do_anuncio` |
 | **Flow** | `listar_tipos_de_bloco`<sup>read</sup> · `ver_fluxo`<sup>read</sup> · `montar_fluxo` · `editar_fluxo` · `validar_fluxo`<sup>read</sup> · `listar_versoes_fluxo`<sup>read</sup> · `restaurar_versao_fluxo` |
@@ -310,12 +326,13 @@ Supported blocks: message, menu, condition, switch, questions, delay, wait for r
 
 ## Security
 
-- **One key per channel.** The AI only sees and changes the channel of the key in use.
+- **A key only opens what you allowed.** A channel key reaches one channel. An all-channels key reaches the channels chosen when it was created, and always expires.
+- **Access is checked on every call.** Before any read or change, BotPlugin checks that you still have access to the channel. If you leave a channel or are removed from it, the AI loses access right away, with either key type.
 - **No secrets exposed.** Passwords, tokens and keys stored in blocks and variables come back to the AI as `[oculto]` (hidden). Editing a block that contains `[oculto]` keeps the stored value.
 - **Only the hash is stored.** The key itself is shown once, when it is generated.
 - **Revoke anytime** from the same dashboard screen, which shows who created each key and when it was last used.
 - **Everything is reversible.** Each flow save becomes a version (the last 10 are kept), and the AI never saves a flow with a new error.
-- **Rate limits:** 120 calls per minute per key, plus a temporary block after 20 failures per minute from the same IP.
+- **Rate limits:** 120 calls per minute per key, and a temporary block for repeated invalid keys.
 
 Found a vulnerability? See [SECURITY.md](SECURITY.md) (report privately).
 
