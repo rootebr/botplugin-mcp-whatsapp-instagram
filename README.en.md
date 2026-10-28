@@ -342,7 +342,7 @@ Found a vulnerability? See [SECURITY.md](SECURITY.md) (report privately).
 
 - [ ] OAuth sign-in, for the ChatGPT app and claude.ai without manual setup
 - [ ] AI agents and scheduling through MCP
-- [ ] Integration blocks and sub-flows
+- [ ] Remaining integration blocks and sub-flows (ChatCenter V2 and WaLeads V2 are already in)
 - [ ] Listing on the official MCP Registry ([`server.json`](server.json))
 
 ---

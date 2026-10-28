@@ -2,6 +2,11 @@
 
 As mudanças do servidor MCP do BotPlugin, da mais nova para a mais antiga.
 
+## Próxima versão
+
+- Blocos **ChatCenter V2** (`chatCenterNodeV2`) e **WaLeads V2** (`waleadsNodeV2`) no catálogo: dá para criar e editar pelo MCP, com as mesmas validações do bot.
+- Transferência de operador nos dois aceita `sendByChannelId`, o canal do workspace que atende o cliente.
+
 ## 0.2.0 · outubro de 2026
 
 - **Chave de todos os canais:** uma chave só para vários canais, gerada em **seu nome › Conectar IA (todos os canais)**. Vale para todos os canais, inclusive os novos, ou só para os escolhidos, e expira em 30 dias, 90 dias ou 1 ano.

@@ -47,6 +47,10 @@ A IA vê esta lista pela ferramenta [`listar_tipos_de_bloco`](ferramentas.md#lis
 | **Webhook** | `webhook` | Chama uma URL externa e guarda a resposta numa variável |
 | **ChatGPT** | `gpt` | Gera um texto com a OpenAI a partir de um prompt (resposta única) |
 | **Gemini** | `gemini` | Gera um texto com o Gemini a partir de um prompt (resposta única) |
+| **ChatCenter V2** | `chatCenterNodeV2` | Age no ChatCenter: tag, nota, transferir operador, mover ou encerrar card de funil, arquivar e atualizar perfil do contato |
+| **WaLeads V2** | `waleadsNodeV2` | Age no WaLeads: tag, nota, transferir operador e mover card de funil |
+
+Na transferência de operador dos dois, `sendByChannelId` diz qual canal do workspace atende o cliente. Só vale com token de workspace e é obrigatório quando o workspace tem mais de um canal e o cliente ainda não tem canal de origem. O token da API sai como `[oculto]` para a IA.
 
 ## WhatsApp Oficial
 
@@ -67,4 +71,4 @@ Só funcionam em canais do WhatsApp Oficial (API da Meta).
 
 ### Ainda pelo painel
 
-Agentes de IA com conversa contínua, agenda, sub-fluxos e os blocos de integração com outros sistemas ainda são configurados direto no editor do painel.
+Agentes de IA com conversa contínua, agenda, sub-fluxos e os demais blocos de integração (Asaas, RD Station, n8n, Google...) ainda são configurados direto no editor do painel.

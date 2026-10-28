@@ -398,7 +398,7 @@ Com a chave de todos os canais, toda ferramenta recebe também o parâmetro `can
 
 Mensagem · Menu · Condição · Switch · Perguntas · Tempo · Aguardar resposta · Webhook (requisição HTTP) · Imagem · Vídeo · Áudio · Documento · Mídia por link · Variável de contato · Aleatório / Sequencial · Dia / Hora · Botões e Lista interativa (WhatsApp Oficial) · ChatGPT e Gemini (resposta única) · Fim · Anotação
 
-O que cada bloco faz e em quais canais funciona: [docs/blocos.md](docs/blocos.md). Agentes de IA, agenda e blocos de integração ainda são configurados pelo painel.
+O que cada bloco faz e em quais canais funciona: [docs/blocos.md](docs/blocos.md). ChatCenter V2 e WaLeads V2 já podem ser montados pelo MCP; agentes de IA, agenda e os demais blocos de integração ainda são configurados pelo painel.
 
 ---
 
@@ -486,7 +486,7 @@ Esses apps pedem login por OAuth, e hoje o BotPlugin autentica por chave. O supo
 
 - [ ] Login por OAuth, para o app do ChatGPT e o claude.ai sem configuração manual
 - [ ] Agentes de IA e agenda pelo MCP
-- [ ] Blocos de integração e sub-fluxos
+- [ ] Demais blocos de integração e sub-fluxos (ChatCenter V2 e WaLeads V2 já entraram)
 - [ ] Publicação no MCP Registry oficial ([`server.json`](server.json))
 
 Tem uma ideia? [Abra uma sugestão](../../issues/new/choose).
