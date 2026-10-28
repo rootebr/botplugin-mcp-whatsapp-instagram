@@ -6,7 +6,7 @@
 
 <p align="center">
   <a href="#connect"><img src="https://img.shields.io/badge/MCP-Streamable_HTTP-0CAF60?style=flat-square&labelColor=062016" alt="MCP Streamable HTTP"></a>
-  <a href="docs/ferramentas.md"><img src="https://img.shields.io/badge/tools-24-0CAF60?style=flat-square&labelColor=062016" alt="24 tools"></a>
+  <a href="docs/ferramentas.md"><img src="https://img.shields.io/badge/tools-25-0CAF60?style=flat-square&labelColor=062016" alt="25 tools"></a>
   <a href="#key-types"><img src="https://img.shields.io/badge/access-per_channel_or_all_channels-0CAF60?style=flat-square&labelColor=062016" alt="Per-channel or all-channels key"></a>
   <a href="README.md"><img src="https://img.shields.io/badge/docs-PT--BR_%7C_EN-0CAF60?style=flat-square&labelColor=062016" alt="Docs in Portuguese and English"></a>
 </p>
@@ -306,7 +306,7 @@ curl https://api.x.ai/v1/responses \
 
 ## Tools
 
-24 tools, plus `listar_canais` on all-channels keys. The AI picks the right one for each request. Full parameter reference (in Portuguese): [docs/ferramentas.md](docs/ferramentas.md).
+25 tools, plus `listar_canais` on all-channels keys. The AI picks the right one for each request. Full parameter reference (in Portuguese): [docs/ferramentas.md](docs/ferramentas.md).
 
 With an all-channels key every tool also takes a `canal` (channel) parameter, and each response ends by naming the channel the AI changed.
 
@@ -315,7 +315,7 @@ With an all-channels key every tool also takes a `canal` (channel) parameter, an
 | **Channel** | `listar_canais`<sup>read · all-channels key</sup> · `ver_canal`<sup>read</sup> · `servidor_cloud` |
 | **Automations** | `listar_automacoes`<sup>read</sup> · `ver_automacao`<sup>read</sup> · `criar_automacao` · `atualizar_automacao` · `ativar_desativar_automacao` |
 | **Triggers** | `listar_ativacoes`<sup>read</sup> · `definir_gatilho_entrada` · `remover_gatilho_entrada` · `salvar_palavra_chave` · `remover_palavra_chave` · `criar_webhook` · `atualizar_webhook` · `remover_webhook` · `definir_automacao_do_anuncio` |
-| **Flow** | `listar_tipos_de_bloco`<sup>read</sup> · `ver_fluxo`<sup>read</sup> · `montar_fluxo` · `editar_fluxo` · `validar_fluxo`<sup>read</sup> · `listar_versoes_fluxo`<sup>read</sup> · `restaurar_versao_fluxo` |
+| **Flow** | `listar_tipos_de_bloco`<sup>read</sup> · `listar_templates_whatsapp`<sup>read</sup> · `ver_fluxo`<sup>read</sup> · `montar_fluxo` · `editar_fluxo` · `validar_fluxo`<sup>read</sup> · `listar_versoes_fluxo`<sup>read</sup> · `restaurar_versao_fluxo` |
 | **Conversations** | `listar_atendimentos`<sup>read</sup> |
 
 <sub><sup>read</sup> read-only: the tool never changes the channel.</sub>

@@ -60,6 +60,7 @@ Só funcionam em canais do WhatsApp Oficial (API da Meta).
 |---|---|---|
 | **Botões** | `buttonNode` | Mensagem com até 3 botões de resposta, um botão de link ou um pedido de localização |
 | **Lista interativa** | `listInteractiveNode` | Lista de opções nativa do WhatsApp |
+| **Template** | `whatsAppTemplateNode` | Envia um template aprovado pela Meta. A IA escolhe o template em `listar_templates_whatsapp` e preenche os parâmetros (aceitam variáveis). Sem template definido, o bloco fica pendente para você escolher no painel |
 
 ## Editor
 

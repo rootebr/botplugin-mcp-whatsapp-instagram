@@ -183,6 +183,14 @@ Catálogo dos blocos que funcionam no canal: o que cada um faz, os campos de `da
 |---|---|:---:|---|
 | `tipo` | texto | | Um tipo só, para ver o detalhe |
 
+### `listar_templates_whatsapp` <sup>leitura</sup>
+Templates de mensagem da conta do WhatsApp Oficial do canal, os mesmos que o editor mostra: texto, chaves de parâmetro e botões. A consulta à Meta é feita pelo BotPlugin; o token da conta não passa pela IA. Templates com cabeçalho de mídia ou botões que o bloco ainda não envia aparecem com `pode_usar: false` e o motivo.
+
+| Parâmetro | Tipo | Obrigatório | Descrição |
+|---|---|:---:|---|
+| `busca` | texto | | Parte do nome do template |
+| `incluir_nao_aprovados` | sim/não | | Mostra também os pendentes e rejeitados (padrão: não) |
+
 ### `ver_fluxo` <sup>leitura</sup>
 Mostra o fluxo bloco a bloco: tipo, dados e para onde vai cada saída. Também lista os problemas que fariam o bot parar.
 

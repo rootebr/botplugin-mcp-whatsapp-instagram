@@ -6,6 +6,8 @@ As mudanças do servidor MCP do BotPlugin, da mais nova para a mais antiga.
 
 - Blocos **ChatCenter V2** (`chatCenterNodeV2`) e **WaLeads V2** (`waleadsNodeV2`) no catálogo: dá para criar e editar pelo MCP, com as mesmas validações do bot.
 - Transferência de operador nos dois aceita `sendByChannelId`, o canal do workspace que atende o cliente.
+- Bloco **Template** do WhatsApp Oficial (`whatsAppTemplateNode`) no catálogo: a IA escolhe o template, preenche os parâmetros e liga as saídas, inclusive as dos botões de resposta rápida. Sem template, o bloco fica pendente e a resposta avisa.
+- Ferramenta nova `listar_templates_whatsapp`: os templates da conta do canal, com as chaves de parâmetro e os botões, consultados pelo BotPlugin sem expor o token da Meta.
 
 ## 0.2.0 · outubro de 2026
 

@@ -6,7 +6,7 @@
 
 <p align="center">
   <a href="#como-conectar"><img src="https://img.shields.io/badge/MCP-Streamable_HTTP-0CAF60?style=flat-square&labelColor=062016" alt="MCP Streamable HTTP"></a>
-  <a href="docs/ferramentas.md"><img src="https://img.shields.io/badge/ferramentas-24-0CAF60?style=flat-square&labelColor=062016" alt="24 ferramentas"></a>
+  <a href="docs/ferramentas.md"><img src="https://img.shields.io/badge/ferramentas-25-0CAF60?style=flat-square&labelColor=062016" alt="25 ferramentas"></a>
   <a href="#tipos-de-chave"><img src="https://img.shields.io/badge/acesso-por_canal_ou_todos_os_canais-0CAF60?style=flat-square&labelColor=062016" alt="Chave por canal ou para todos os canais"></a>
   <a href="README.en.md"><img src="https://img.shields.io/badge/docs-PT--BR_%7C_EN-0CAF60?style=flat-square&labelColor=062016" alt="Documentação em português e inglês"></a>
 </p>
@@ -323,7 +323,7 @@ Acrescente em `~/.codeium/windsurf/mcp_config.json` e clique em atualizar em **M
 
 ## Ferramentas
 
-São 24 ferramentas, mais a `listar_canais` na chave de todos os canais. A IA escolhe sozinha qual usar a cada pedido; você não precisa decorar nenhuma. Os parâmetros de cada uma estão em [docs/ferramentas.md](docs/ferramentas.md).
+São 25 ferramentas, mais a `listar_canais` na chave de todos os canais. A IA escolhe sozinha qual usar a cada pedido; você não precisa decorar nenhuma. Os parâmetros de cada uma estão em [docs/ferramentas.md](docs/ferramentas.md).
 
 Com a chave de todos os canais, toda ferramenta recebe também o parâmetro `canal`, e cada resposta termina dizendo em qual canal a IA mexeu.
 
@@ -371,6 +371,7 @@ Com a chave de todos os canais, toda ferramenta recebe também o parâmetro `can
     <td valign="top">
 
 `listar_tipos_de_bloco`&nbsp;<sup>leitura</sup><br>
+`listar_templates_whatsapp`&nbsp;<sup>leitura</sup><br>
 `ver_fluxo`&nbsp;<sup>leitura</sup><br>
 `montar_fluxo`<br>
 `editar_fluxo`<br>
